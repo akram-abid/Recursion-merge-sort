@@ -14,6 +14,18 @@ function fibsRec(number, arr = [0, 1]) {
     arr.push(arr[arr.length - 1] + arr[arr.length - 2]);
     return fibsRec(number, arr);
 }
+function mergeSort(arr) {
+    if (arr.length <= 1) {
+        return arr;
+    }
+
+    const middle = Math.floor(arr.length / 2);
+    
+    const left = arr.slice(0, middle);
+    const right = arr.slice(middle);
+
+    return merge(mergeSort(left), mergeSort(right));
+}
 
 function merge(arr1, arr2) {
     const result = [];
