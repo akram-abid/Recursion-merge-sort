@@ -7,3 +7,10 @@ function fibs(number) {
     return arr;
 }
 
+function fibsRec(number, arr = [0, 1]) {
+    if (arr.length >= number) {
+        return arr;
+    }
+    arr.push(arr[arr.length - 1] + arr[arr.length - 2]);
+    return fibsRec(number, arr);
+}
